@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -109,9 +110,22 @@ export default function Home() {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-        {/* Logo/Brand */}
-        <div className="mb-16 animate-fade-in">
-          <div className="relative inline-block">
+        {/* Logo/Brand with Eagle */}
+        <div className="mb-8 md:mb-16 animate-fade-in">
+          <div className="relative">
+            {/* Eagle Logo - minimalist integration */}
+            <div className="mb-8 grid justify-center">
+              <Image
+                src="/eagle-logo.jpg"
+                alt="DPR Hub"
+                width={200}
+                height={200}
+                className="w-48 h-48 md:w-56 md:h-56 object-contain opacity-90"
+                priority
+              />
+            </div>
+
+            {/* Text branding */}
             <h1 className="text-8xl md:text-[12rem] font-black tracking-[-0.05em] text-white mb-0 leading-none uppercase">
               DPR
             </h1>
@@ -135,19 +149,6 @@ export default function Home() {
           Desarrollamos soluciones tecnológicas especializadas para diferentes
           rubros profesionales
         </p>
-
-        {/* Status badge */}
-        <div className="animate-fade-in-delay-3">
-          <div className="inline-flex items-center gap-4 px-8 py-4 rounded-full border border-zinc-800 bg-zinc-950/50 backdrop-blur-sm">
-            <div className="relative">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
-              <div className="absolute inset-0 w-3 h-3 bg-emerald-500 rounded-full animate-ping opacity-75" />
-            </div>
-            <span className="text-base font-bold tracking-[0.2em] text-zinc-300 uppercase">
-              En Desarrollo
-            </span>
-          </div>
-        </div>
 
         {/* Footer */}
         <div className="absolute bottom-8 left-0 right-0 text-center animate-fade-in-delay-4">
