@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import { Orbitron, Rajdhani } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const rajdhani = Rajdhani({
-  variable: "--font-rajdhani",
+const robotoMono = Roboto_Mono({
+  variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "DPR Hub - Sistemas de Gestión Profesional",
-  description: "Desarrollamos soluciones tecnológicas especializadas para diferentes rubros profesionales",
+  title: "DPR Hub",
+  description: "Redefiniendo los estándares de la eficiencia empresarial.",
 };
 
 export default function RootLayout({
@@ -27,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${orbitron.variable} ${rajdhani.variable} antialiased`}
+        className={`${inter.variable} ${robotoMono.variable} antialiased`}
       >
         {children}
       </body>

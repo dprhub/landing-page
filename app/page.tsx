@@ -1,166 +1,68 @@
-"use client";
-
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      radius: number;
-    }> = [];
-
-    // Create particles
-    for (let i = 0; i < 80; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.5 + 0.5,
-      });
-    }
-
-    function animate() {
-      if (!ctx || !canvas) return;
-
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle, i) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
-        ctx.fill();
-
-        // Draw connections
-        particles.slice(i + 1).forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / 120)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        });
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden font-[family-name:var(--font-orbitron)]">
-      {/* Animated background canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 z-0"
-        style={{ opacity: 0.4 }}
-      />
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-black to-zinc-900 z-0" />
-
-      {/* Grid pattern */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
-          `,
-          backgroundSize: "50px 50px",
-        }}
-      />
-
-      {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-        {/* Logo/Brand with Eagle */}
-        <div className="mb-8 md:mb-16 animate-fade-in">
-          <div className="relative">
-            {/* Eagle Logo - minimalist integration */}
-            <div className="mb-8 grid justify-center">
-              <Image
-                src="/eagle-logo.jpg"
-                alt="DPR Hub"
-                width={200}
-                height={200}
-                className="w-48 h-48 md:w-56 md:h-56 object-contain opacity-90"
-                priority
-              />
-            </div>
-
-            {/* Text branding */}
-            <h1 className="text-8xl md:text-[12rem] font-black tracking-[-0.05em] text-white mb-0 leading-none uppercase">
-              DPR
-            </h1>
-            <div className="absolute -bottom-4 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent opacity-60" />
-            <div className="absolute -bottom-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-          </div>
-          <div className="text-3xl md:text-5xl font-black tracking-[0.5em] text-zinc-400 mt-6 uppercase">
-            HUB
-          </div>
-        </div>
-
-        {/* Tagline */}
-        <p className="max-w-3xl text-xl md:text-3xl font-[family-name:var(--font-rajdhani)] font-medium text-zinc-100 mb-10 leading-relaxed animate-fade-in-delay-1 tracking-wide uppercase">
-          Sistemas de gestión inteligentes
-          <br />
-          para profesionales
-        </p>
-
-        {/* Description */}
-        <p className="max-w-2xl font-[family-name:var(--font-rajdhani)] font-normal text-lg md:text-xl text-zinc-300 mb-16 leading-relaxed animate-fade-in-delay-2">
-          Desarrollamos soluciones tecnológicas especializadas para diferentes
-          rubros profesionales
-        </p>
-
-        {/* Footer */}
-        <div className="absolute bottom-8 left-0 right-0 text-center animate-fade-in-delay-4">
-          <p className="text-sm md:text-md font-[family-name:var(--font-rajdhani)] text-zinc-500 tracking-[0.3em] uppercase font-medium">
-            © 2026 DPR Hub · Innovación en desarrollo
-          </p>
-        </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zinc-800 rounded-full blur-3xl opacity-10 animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-zinc-700 rounded-full blur-3xl opacity-10 animate-float-delayed" />
+    <div className="relative flex flex-col min-h-screen bg-black text-white selection:bg-zinc-800 font-sans overflow-hidden">
+      {/* Background Gradients */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-zinc-900/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-zinc-900/30 rounded-full blur-[120px]" />
       </div>
+
+      {/* Header */}
+      <header className="relative z-10 flex items-center justify-between px-6 py-6 md:px-12">
+        <div className="flex items-center gap-2">
+          {/* Minimalist text logo */}
+          <span className="text-lg font-bold tracking-tight text-white/90">DPR Hub</span>
+        </div>
+        <nav>
+          {/* Optional minimal nav or contact button */}
+          <a
+            // href="mailto:contact@dprhub.com"
+            className="text-sm font-medium text-zinc-400/50 hover:text-white transition-colors duration-200"
+          >
+            Contacto
+          </a>
+        </nav>
+      </header>
+
+      {/* Main Content */}
+      <main className="relative z-10 flex flex-col items-center justify-center flex-1 px-6 text-center">
+        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+          {/* Badge */}
+          <div className="inline-flex items-center justify-center px-3 py-1 mb-4 text-xs font-medium text-zinc-400 border rounded-full border-zinc-800 bg-zinc-900/50 backdrop-blur-sm animate-fade-in-delay-1">
+            <span className="w-2 h-2 mr-2 bg-green-500 rounded-full animate-pulse" />
+            Sistemas Inteligentes
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] text-transparent bg-clip-text bg-linear-to-b from-white to-zinc-500 animate-fade-in-delay-2">
+            Redefiniendo los estándares de la eficiencia empresarial.
+          </h1>
+
+          {/* Subheadline/Description */}
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-zinc-400 font-light leading-relaxed animate-fade-in-delay-3">
+            Optimización operativa impulsada por IA y arquitectura Cloud-native para profesionales que exigen excelencia.
+          </p>
+
+          {/* CTA Buttons */}
+          {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 animate-fade-in-delay-4">
+            <button className="px-8 py-3 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 transition-all duration-300 hover:scale-105 active:scale-95">
+              Comenzar ahora
+            </button>
+            <button className="px-8 py-3 text-sm font-medium text-zinc-300 border border-zinc-800 rounded-full hover:border-zinc-700 hover:bg-zinc-900/50 transition-all duration-300 hover:text-white">
+              Ver soluciones
+            </button>
+          </div> */}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="relative z-10 py-8 text-center border-t border-white/5">
+        <p className="text-xs text-zinc-600 font-mono tracking-widest uppercase">
+          © 2026 DPR Hub · Innovación Cloud-Native
+        </p>
+      </footer>
     </div>
   );
 }
