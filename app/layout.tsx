@@ -13,8 +13,40 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DPR Hub",
-  description: "Redefiniendo los estándares de la eficiencia empresarial.",
+  title: "DPRHub - DPR Hub | Sistemas Inteligentes de Eficiencia Empresarial",
+  description: "DPRHub (DPR Hub) - Redefiniendo los estándares de la eficiencia empresarial. Optimización operativa impulsada por IA y arquitectura Cloud-native para profesionales que exigen excelencia.",
+  keywords: ["DPRHub", "dprhub", "DPR Hub", "DPR", "Hub", "sistemas inteligentes", "eficiencia empresarial", "IA", "cloud-native", "optimización operativa"],
+  authors: [{ name: "DPRHub" }],
+  creator: "DPRHub",
+  publisher: "DPRHub",
+  applicationName: "DPRHub",
+  openGraph: {
+    title: "DPRHub - Sistemas Inteligentes de Eficiencia Empresarial",
+    description: "DPRHub (DPR Hub) - Redefiniendo los estándares de la eficiencia empresarial con IA y Cloud-native.",
+    siteName: "DPRHub",
+    locale: "es_ES",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DPRHub - Sistemas Inteligentes de Eficiencia Empresarial",
+    description: "DPRHub - Redefiniendo los estándares de la eficiencia empresarial.",
+    creator: "@dprhub",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.dprhub.com",
+  },
 };
 
 export default function RootLayout({
