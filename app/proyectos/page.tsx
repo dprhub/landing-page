@@ -10,7 +10,7 @@ const projects = [
         title: "Sirius",
         category: "HealthTech",
         description: "Sistema integral de gestión clínica con visualización 3D interactiva para odontología avanzada. Incluye control de pacientes, agenda inteligente y facturación.",
-        status: "En producción"
+        status: "En desarrollo"
     }
 ];
 
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
                                 <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest border border-zinc-800 px-2 py-1 rounded-md">
                                     {project.category}
                                 </span>
-                                <span className="flex h-2 w-2 rounded-full bg-green-500/50"></span>
+                                <span className="flex h-2 w-2 rounded-full bg-yellow-500/50"></span>
                             </div>
                             <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                                 {project.title}

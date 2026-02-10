@@ -10,7 +10,7 @@ export default function Home() {
     "slogan": "Redefiniendo los estándares de la eficiencia empresarial",
     "foundingDate": "2026",
     "sameAs": [
-      "https://www.linkedin.com/company/dprhub"
+      "https://www.linkedin.com/company/dprhub123"
     ]
   };
 

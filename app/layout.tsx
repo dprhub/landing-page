@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "DPRHub - Sistemas Inteligentes de Eficiencia Empresarial",
     description: "DPRHub - Redefiniendo los estándares de la eficiencia empresarial.",
-    creator: "@dprhub",
+    creator: "@dprhub123",
   },
   robots: {
     index: true,

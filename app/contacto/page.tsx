@@ -30,13 +30,13 @@ export default function ContactPage() {
                         </a>
 
                         <a
-                            href="https://www.linkedin.com/company/dprhub"
+                            href="https://www.linkedin.com/company/dprhub123"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block group p-6 border border-zinc-800 rounded-2xl bg-zinc-900/20 hover:bg-zinc-900/40 hover:border-zinc-600 transition-all duration-300"
                         >
                             <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">LinkedIn</h3>
-                            <p className="text-zinc-400">dprhub</p>
+                            <p className="text-zinc-400">dprhub123</p>
                         </a>
                     </div>
                 </div>
