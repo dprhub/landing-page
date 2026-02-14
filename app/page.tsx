@@ -2,15 +2,15 @@ export default function Home() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "DPRHub",
-    "alternateName": ["DPR Hub", "dprhub"],
-    "url": "https://www.dprhub.com",
-    "logo": "https://www.dprhub.com/logo.png",
-    "description": "DPRHub - Redefiniendo los estándares de la eficiencia empresarial. Optimización operativa impulsada por IA y arquitectura Cloud-native.",
+    "name": "DPR",
+    "alternateName": ["DPR", "dpr"],
+    "url": "https://www.dpr.com.py",
+    "logo": "https://www.dpr.com.py/logo.png",
+    "description": "DPR - Redefiniendo los estándares de la eficiencia empresarial. Optimización operativa impulsada por IA y arquitectura Cloud-native.",
     "slogan": "Redefiniendo los estándares de la eficiencia empresarial",
     "foundingDate": "2026",
     "sameAs": [
-      "https://www.linkedin.com/company/dprhub123"
+      "https://www.linkedin.com/company/dpr_py"
     ]
   };
 
@@ -26,7 +26,7 @@ export default function Home() {
         {/* Badge */}
         <div className="inline-flex items-center justify-center px-3 py-1 mb-4 text-xs font-medium text-zinc-400 border rounded-full border-zinc-800 bg-zinc-900/50 backdrop-blur-sm animate-fade-in-delay-1">
           <span className="w-2 h-2 mr-2 bg-green-500 rounded-full animate-pulse" />
-          DPRHub · Sistemas Inteligentes
+          DPR · Sistemas Inteligentes
         </div>
 
         {/* Main Headline */}

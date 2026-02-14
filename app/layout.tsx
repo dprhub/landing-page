@@ -15,25 +15,25 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DPRHub - DPR Hub | Sistemas Inteligentes de Eficiencia Empresarial",
-  description: "DPRHub (DPR Hub) - Redefiniendo los estándares de la eficiencia empresarial. Optimización operativa impulsada por IA y arquitectura Cloud-native para profesionales que exigen excelencia.",
-  keywords: ["DPRHub", "dprhub", "DPR Hub", "DPR", "Hub", "sistemas inteligentes", "eficiencia empresarial", "IA", "cloud-native", "optimización operativa"],
-  authors: [{ name: "DPRHub" }],
-  creator: "DPRHub",
-  publisher: "DPRHub",
-  applicationName: "DPRHub",
+  title: "DPR - Sistemas Inteligentes de Eficiencia Empresarial",
+  description: "DPR - Redefiniendo los estándares de la eficiencia empresarial. Optimización operativa impulsada por IA y arquitectura Cloud-native para profesionales que exigen excelencia.",
+  keywords: ["DPR", "dpr", "sistemas inteligentes", "eficiencia empresarial", "IA", "cloud-native", "optimización operativa"],
+  authors: [{ name: "DPR" }],
+  creator: "DPR",
+  publisher: "DPR",
+  applicationName: "DPR",
   openGraph: {
-    title: "DPRHub - Sistemas Inteligentes de Eficiencia Empresarial",
-    description: "DPRHub (DPR Hub) - Redefiniendo los estándares de la eficiencia empresarial con IA y Cloud-native.",
-    siteName: "DPRHub",
+    title: "DPR - Sistemas Inteligentes de Eficiencia Empresarial",
+    description: "DPR - Redefiniendo los estándares de la eficiencia empresarial con IA y Cloud-native.",
+    siteName: "DPR",
     locale: "es_ES",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DPRHub - Sistemas Inteligentes de Eficiencia Empresarial",
-    description: "DPRHub - Redefiniendo los estándares de la eficiencia empresarial.",
-    creator: "@dprhub123",
+    title: "DPR - Sistemas Inteligentes de Eficiencia Empresarial",
+    description: "DPR - Redefiniendo los estándares de la eficiencia empresarial.",
+    creator: "@dpr_py",
   },
   robots: {
     index: true,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.dprhub.com",
+    canonical: "https://www.dpr.com.py",
   },
   icons: {
     icon: '/favicon.jpg',
